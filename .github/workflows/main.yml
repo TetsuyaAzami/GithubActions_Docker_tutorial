@@ -1,0 +1,18 @@
+name: Manual Workflow with Input
+
+on:
+  workflow_dispatch:
+    inputs:
+      parameter_name:
+        description: 'Enter a value for the parameter'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run a script
+        run: echo "Hello, manual trigger!"
